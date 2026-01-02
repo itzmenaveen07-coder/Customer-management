@@ -1,5 +1,7 @@
-package com.example.ordermanagement.order_management;
+package com.example.ordermanagement.order_management.Service;
 
+import com.example.ordermanagement.order_management.entity.Customer;
+import com.example.ordermanagement.order_management.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,6 +37,8 @@ public class CustomerService
             existingCustomer.setPincode(updatedCustomer.getPincode());
 
         return customerRepository.save(existingCustomer);
+
+
     }
     // ✅ Get customer by ID
     public Customer getCustomerById(Integer customerId)
@@ -54,4 +58,22 @@ public class CustomerService
 
         customerRepository.delete(customer);
     }
+    public void deductBalance(Integer customerId, Double amount)
+    {
+
+        Customer customer = customerRepository.findById(customerId)
+                .orElseThrow(() -> new RuntimeException("Customer not found"));;
+
+        if (customer.getBalance() == null)
+        {
+            customer.setBalance(0.0);
+        }
+
+        if (customer.getBalance() < amount) {
+            throw new RuntimeException("Insufficient balance");
+        }
+        customer.setBalance(customer.getBalance() - amount);
+        customerRepository.save(customer);
+    }
+
 }

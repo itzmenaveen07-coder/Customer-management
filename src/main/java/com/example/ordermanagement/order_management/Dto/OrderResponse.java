@@ -1,4 +1,4 @@
-package com.example.ordermanagement.order_management;
+package com.example.ordermanagement.order_management.Dto;
 
 import lombok.Data;
 
@@ -9,4 +9,6 @@ public class OrderResponse {
     private Double amount;
     private String orderStatus;
     private Integer customerId;
+    private String customerName; // NEW
+
 }
