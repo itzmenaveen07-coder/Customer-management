@@ -1,4 +1,4 @@
-package com.example.ordermanagement.order_management;
+package com.example.ordermanagement.order_management.Dto;
 import lombok.Data;
 
 @Data

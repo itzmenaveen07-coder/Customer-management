@@ -1,4 +1,4 @@
-package com.example.ordermanagement.order_management;
+package com.example.ordermanagement.order_management.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

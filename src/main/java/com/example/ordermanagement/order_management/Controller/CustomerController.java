@@ -1,4 +1,7 @@
-package com.example.ordermanagement.order_management;
+package com.example.ordermanagement.order_management.Controller;
+import com.example.ordermanagement.order_management.entity.Customer;
+import com.example.ordermanagement.order_management.repository.CustomerRepository;
+import com.example.ordermanagement.order_management.Service.CustomerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +11,6 @@ import java.util.List;
 @RequestMapping("/api/customers")
 public class CustomerController
 {
-
     private final CustomerRepository repository;
     private final CustomerService customerService;
 
@@ -38,6 +40,7 @@ public class CustomerController
     // ✅ GET all customers
     @GetMapping
     public List<Customer> getAllCustomers()
+
     {
         return customerService.getAllCustomers();
     }
@@ -48,4 +51,14 @@ public class CustomerController
         customerService.deleteCustomer(customerId);
         return ResponseEntity.ok(  "customer "+ customerId + " deleted successfully");
     }
+    // ⭐ NEW ENDPOINT  FOR BALANCE CHECK
+    @PostMapping("/{customerId}/deduct-balance")
+    public ResponseEntity<String> deductBalance(
+            @PathVariable Integer customerId,
+            @RequestParam Double amount) {
+
+        customerService.deductBalance(customerId, amount);
+        return ResponseEntity.ok("Balance deducted successfully" );
+    }
+
 }

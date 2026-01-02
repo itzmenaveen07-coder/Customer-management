@@ -1,4 +1,4 @@
-package com.example.ordermanagement.order_management;
+package com.example.ordermanagement.order_management.entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -30,11 +30,13 @@ public class Customer {
     @Column(name = "pincode")
     private String pincode;
 
+    @Column(name =" balance")
+    private Double balance;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt = LocalDateTime.now();
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Order> orders;
-
     // getters & setters
 }
