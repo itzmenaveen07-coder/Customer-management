@@ -8,7 +8,7 @@ public class OrderManagementApplicationTests {
 
 	@Test
 	void contextLoads() {
-		return ;
+
 	}
 
 }
