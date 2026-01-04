@@ -3,7 +3,7 @@ package com.example.ordermanagement.order_management.Controller;
 import com.example.ordermanagement.order_management.Dto.LoginRequest;
 import com.example.ordermanagement.order_management.Dto.RegisterRequest;
 import com.example.ordermanagement.order_management.Service.CustomUserDetailsService;
-import com.example.ordermanagement.order_management.Service.JwtService;
+import com.example.ordermanagement.order_management.security.JwtService;
 import com.example.ordermanagement.order_management.Service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

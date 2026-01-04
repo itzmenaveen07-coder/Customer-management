@@ -1,7 +1,6 @@
-package com.example.ordermanagement.order_management.Auth;
+package com.example.ordermanagement.order_management.security;
 
 import com.example.ordermanagement.order_management.Service.CustomUserDetailsService;
-import com.example.ordermanagement.order_management.Service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

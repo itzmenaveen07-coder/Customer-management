@@ -1,6 +1,6 @@
 package com.example.ordermanagement.order_management.config;
 
-import com.example.ordermanagement.order_management.Auth.JwtAuthenticationFilter;
+import com.example.ordermanagement.order_management.security.JwtAuthenticationFilter;
 import com.example.ordermanagement.order_management.Service.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
