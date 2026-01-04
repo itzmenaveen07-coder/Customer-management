@@ -3,8 +3,8 @@ package com.example.ordermanagement.order_management.Controller;
 import com.example.ordermanagement.order_management.Dto.LoginRequest;
 import com.example.ordermanagement.order_management.Dto.RegisterRequest;
 import com.example.ordermanagement.order_management.Service.CustomUserDetailsService;
+import com.example.ordermanagement.order_management.Service.JwtService;
 import com.example.ordermanagement.order_management.Service.UserService;
-import com.example.ordermanagement.order_management.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,16 +23,25 @@ public class AuthController {
     private final AuthenticationManager authManager;
     private final CustomUserDetailsService userDetailsService;
     private final UserService userService;
-    private final JwtUtil jwtUtil;
+    private final JwtService jwtService; // ✅ ADD THIS
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody RegisterRequest request) {
-        userService.registerUser(request.getName(), request.getEmail(), request.getPassword());
+    public ResponseEntity<String> register(
+            @RequestBody RegisterRequest request) {
+
+        userService.registerUser(
+                request.getName(),
+                request.getEmail(),
+                request.getPassword()
+        );
+
         return ResponseEntity.ok("User registered successfully");
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
+    public ResponseEntity<?> login(
+            @RequestBody LoginRequest request) {
+
         try {
             authManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
@@ -41,12 +50,16 @@ public class AuthController {
                     )
             );
         } catch (Exception ex) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+            return ResponseEntity
+                    .status(HttpStatus.UNAUTHORIZED)
                     .body("Invalid email or password");
         }
 
-        final UserDetails userDetails = userDetailsService.loadUserByUsername(request.getEmail());
-        final String token = jwtUtil.generateToken(userDetails);
+        UserDetails userDetails =
+                userDetailsService.loadUserByUsername(request.getEmail());
+
+        // ✅ USE JwtService
+        String token = jwtService.generateToken(userDetails);
 
         return ResponseEntity.ok(Map.of("token", token));
     }
