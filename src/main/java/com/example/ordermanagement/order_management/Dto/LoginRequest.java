@@ -1,11 +1,9 @@
 package com.example.ordermanagement.order_management.Dto;
 
 import lombok.Data;
-import lombok.Data;
 
 @Data
 public class LoginRequest {
     private String email;
     private String password;
 }
-
