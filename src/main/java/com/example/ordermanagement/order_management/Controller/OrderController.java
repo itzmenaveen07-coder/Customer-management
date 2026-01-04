@@ -4,6 +4,7 @@ import com.example.ordermanagement.order_management.entity.Order;
 import com.example.ordermanagement.order_management.Dto.OrderRequest;
 import com.example.ordermanagement.order_management.Dto.OrderResponse;
 import com.example.ordermanagement.order_management.Service.OrderService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,14 +12,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/orders")
+@RequiredArgsConstructor
 public class OrderController {
 
-    private OrderService orderService;
-
-    public OrderController(OrderService orderService) {
-        this.orderService = orderService;
-    }
-
+    private final OrderService orderService;
     @PostMapping("/create/{customerId}")
     public ResponseEntity<OrderResponse> createOrder(
             @PathVariable Integer customerId,
@@ -32,22 +29,24 @@ public class OrderController {
             response.setProductName(order.getProductname());
             response.setAmount(order.getAmount());
             response.setOrderStatus(order.getOrderStatus());
-            response.setCustomerId(order.getCustomer().getCustomerId());
+           response.setCustomerId(order.getCustomer().getCustomerId());
 
             return ResponseEntity.ok(response);
 
-        } catch (RuntimeException e) {
+        } catch (RuntimeException e)
+        {
             return ResponseEntity
                     .badRequest()
-                    .body(new OrderResponse() {{
+                    .body(new OrderResponse()
+                    {{
                         setOrderStatus(e.getMessage());
-                    }});
+                        }});
         }
     }
     @GetMapping("/{orderId}")
-    public OrderResponse getorderDetailsById(@PathVariable Integer orderId) {
+    public OrderResponse getorderDetailsById(@PathVariable Integer orderId)
+    {
         Order order = orderService.getorderDetailsById(orderId);
-
         OrderResponse response = new OrderResponse();
         response.setOrderId(order.getOrderId());
         response.setProductName(order.getProductname());

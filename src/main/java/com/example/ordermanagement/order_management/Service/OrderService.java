@@ -4,6 +4,7 @@ import com.example.ordermanagement.order_management.entity.Customer;
 import com.example.ordermanagement.order_management.entity.Order;
 import com.example.ordermanagement.order_management.repository.CustomerRepository;
 import com.example.ordermanagement.order_management.repository.OrderRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -11,17 +12,11 @@ import java.util.List;
 
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class OrderService {
 
     private final OrderRepository orderRepository;
     private final CustomerService customerService;  // call customer service directly
-
-    public OrderService(OrderRepository orderRepository, CustomerRepository customerRepository,
-                        CustomerService customerService)
-    {
-        this.orderRepository = orderRepository;
-        this.customerService = customerService;
-    }
 
     public Order createOrder(Integer customerId, Double amount, String productName) {
 
