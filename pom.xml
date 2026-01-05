@@ -8,10 +8,10 @@
         <version>3.5.9</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example.ordermanagement</groupId>
+    <groupId>com.example.Customermanagement</groupId>
     <artifactId>Customer-management</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>OrderManagementApplication</name>
+    <name>CustomermanagementApplication</name>
     <description>Demo project for Spring Boot</description>
     <url/>
     <licenses>
