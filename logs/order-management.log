@@ -1,5 +1,5 @@
-2025-12-31 19:11:14 INFO  com.example.ordermanagement.order_management.OrderManagementApplication - Starting OrderManagementApplication using Java 17.0.17 with PID 24104 (C:\Users\itzme\IdeaProjects\order-management\target\classes started by itzme in C:\Users\itzme\IdeaProjects\order-management)
-2025-12-31 19:11:14 INFO  com.example.ordermanagement.order_management.OrderManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-31 19:11:14 INFO  com.example.ordermanagement.Customer_service.OrderManagementApplication - Starting OrderManagementApplication using Java 17.0.17 with PID 24104 (C:\Users\itzme\IdeaProjects\order-management\target\classes started by itzme in C:\Users\itzme\IdeaProjects\order-management)
+2025-12-31 19:11:14 INFO  com.example.ordermanagement.Customer_service.OrderManagementApplication - No active profile set, falling back to 1 default profile: "default"
 2025-12-31 19:11:15 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2025-12-31 19:11:15 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces.
 2025-12-31 19:11:15 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
@@ -30,20 +30,20 @@
 2025-12-31 19:11:20 INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
 2025-12-31 19:11:20 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
 2025-12-31 19:11:20 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-12-31 19:11:20 INFO  com.example.ordermanagement.order_management.OrderManagementApplication - Started OrderManagementApplication in 6.776 seconds (process running for 7.549)
+2025-12-31 19:11:20 INFO  com.example.ordermanagement.Customer_service.OrderManagementApplication - Started OrderManagementApplication in 6.776 seconds (process running for 7.549)
 2025-12-31 19:11:20 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-12-31 19:11:20 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-12-31 19:11:20 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
 2025-12-31 20:13:01 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m13s127ms724µs).
 2025-12-31 20:36:17 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m46s628ms32µs900ns).
 2025-12-31 20:46:08 WARN  org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
-2025-12-31 20:48:58 INFO  com.example.ordermanagement.order_management.Service.OrderService - Order created for customer 9
+2025-12-31 20:48:58 INFO  com.example.ordermanagement.Customer_service.Service.OrderService - Order created for customer 9
 2025-12-31 20:54:57 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Customer not found with id: 9] with root cause
 java.lang.RuntimeException: Customer not found with id: 9
-	at com.example.ordermanagement.order_management.Service.CustomerService.lambda$getCustomerById$1(CustomerService.java:45)
+	at com.example.ordermanagement.Customer_service.Service.CustomerService.lambda$getCustomerById$1(CustomerService.java:45)
 	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-	at com.example.ordermanagement.order_management.Service.CustomerService.getCustomerById(CustomerService.java:45)
-	at com.example.ordermanagement.order_management.Controller.CustomerController.getCustomerById(CustomerController.java:38)
+	at com.example.ordermanagement.Customer_service.Service.CustomerService.getCustomerById(CustomerService.java:45)
+	at com.example.ordermanagement.Customer_service.Controller.CustomerController.getCustomerById(CustomerController.java:38)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -101,10 +101,10 @@ java.lang.RuntimeException: Customer not found with id: 9
 2025-12-31 21:50:19 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m58s783ms743µs800ns).
 2025-12-31 21:51:20 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Customer not found with id: 11] with root cause
 java.lang.RuntimeException: Customer not found with id: 11
-	at com.example.ordermanagement.order_management.Service.CustomerService.lambda$getCustomerById$1(CustomerService.java:45)
+	at com.example.ordermanagement.Customer_service.Service.CustomerService.lambda$getCustomerById$1(CustomerService.java:45)
 	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-	at com.example.ordermanagement.order_management.Service.CustomerService.getCustomerById(CustomerService.java:45)
-	at com.example.ordermanagement.order_management.Controller.CustomerController.getCustomerById(CustomerController.java:38)
+	at com.example.ordermanagement.Customer_service.Service.CustomerService.getCustomerById(CustomerService.java:45)
+	at com.example.ordermanagement.Customer_service.Controller.CustomerController.getCustomerById(CustomerController.java:38)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -161,10 +161,10 @@ java.lang.RuntimeException: Customer not found with id: 11
 	at java.base/java.lang.Thread.run(Thread.java:840)
 2025-12-31 21:51:57 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Customer not found with id: 11] with root cause
 java.lang.RuntimeException: Customer not found with id: 11
-	at com.example.ordermanagement.order_management.Service.CustomerService.lambda$getCustomerById$1(CustomerService.java:45)
+	at com.example.ordermanagement.Customer_service.Service.CustomerService.lambda$getCustomerById$1(CustomerService.java:45)
 	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-	at com.example.ordermanagement.order_management.Service.CustomerService.getCustomerById(CustomerService.java:45)
-	at com.example.ordermanagement.order_management.Controller.CustomerController.getCustomerById(CustomerController.java:38)
+	at com.example.ordermanagement.Customer_service.Service.CustomerService.getCustomerById(CustomerService.java:45)
+	at com.example.ordermanagement.Customer_service.Controller.CustomerController.getCustomerById(CustomerController.java:38)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
